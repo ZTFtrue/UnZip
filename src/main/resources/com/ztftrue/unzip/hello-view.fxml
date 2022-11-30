@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ztftrue.unzip.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <HBox>
+        <Label text="SourceCode: "/>
+        <Hyperlink text="https://github.com/ZTFtrue/" onAction="#openLink"/>
+    </HBox>
+    <VBox>
+
+        <HBox>  <Label text="Selected code: "/><Label fx:id="selectCode" text="Default UTF-8"/></HBox>
+        <TextField fx:id="searchInput"   promptText="Search in here"   />
+        <ListView fx:id="listViewCharset" onMouseClicked="#handleMouseClick"/>
+    </VBox>
+    <Label wrapText="true"
+           maxWidth="Infinity"
+           minHeight="-Infinity"
+           text="出现错误或者出现莫名字符, 请尝试更换编码.
+    解压目录和zip文件所在目录相同, 目录名字就是zip文件名字, 如果已存在相同文件夹,新文件夹会在后边添加序号(n). "/>
+    <Label wrapText="true" fx:id="welcomeText" text="欢迎使用"/>
+    <Label wrapText="true" fx:id="fileDir"/>
+    <HBox>
+        <Button text="选择文件" fx:id="selectFile" onAction="#onHelloButtonClick"/>
+        <Button text="解压文件" fx:id="unCompress" onAction="#onHelloButtonClick"/>
+    </HBox>
+    <HBox>
+        <Button text="选择目录" fx:id="selectDir" onAction="#onHelloButtonClick"/>
+        <Button text="压缩文件" fx:id="compressFile" onAction="#onHelloButtonClick"/>
+    </HBox>
+</VBox>
